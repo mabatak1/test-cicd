@@ -1,14 +1,15 @@
-name: hello
+name: hello world
 on:
+
   push:
     paths:
-      - "!README.md"
-      - "!docs/**"
-      - "**.js"
+      - '!README.md'
+      - '!docs/**'
+      - '**.js'
     branches:
-      - "main"
-      - "release/**"
-      - "!dev/**"
+      - 'main'
+      - 'release/**'
+      - '!dev/**'
   pull_request:
     type: [opened, reopened, synchronize]
 
@@ -25,4 +26,4 @@ jobs:
           labels: "do not build"
       - run: echo "TODAY=$(date +%y-%m-%d)" >> $GITHUB_ENV
       - run: echo Hello world, today is $TODAY
-      - run: docker image ls
+      - run: docker image ls     
